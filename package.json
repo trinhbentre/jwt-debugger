@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@web-tools/ui": "*",
+    "@web-tools/ui": "file:./web-tools-ui-1.0.0.tgz",
     "react": "19.2.4",
     "react-dom": "19.2.4"
   },

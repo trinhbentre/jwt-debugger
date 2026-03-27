@@ -35,7 +35,6 @@ function highlight(code: string, lang: Language): React.ReactNode[] {
 
     // Tokenise the line: strings, keywords, rest
     const parts: React.ReactNode[] = []
-    let rest = line
     let segKey = 0
 
     // String literals (single + double quote, capture)
@@ -58,7 +57,8 @@ function highlight(code: string, lang: Language): React.ReactNode[] {
       )
       lastIdx = m.index + m[0].length
     }
-    rest = line.slice(lastIdx)
+    const rest = line.slice(lastIdx)
+    // eslint-disable-next-line no-useless-assignment
     if (rest) parts.push(<span key={segKey++}>{colorKeywords(rest, keywords, segKey++)}</span>)
 
     return (
@@ -85,6 +85,7 @@ function colorKeywords(text: string, keywords: string[], baseKey: number): React
     )
     last = m.index + m[0].length
   }
+  // eslint-disable-next-line no-useless-assignment
   if (last < text.length) parts.push(<span key={k++}>{text.slice(last)}</span>)
   return <>{parts}</>
 }

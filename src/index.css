@@ -1,9 +1,1 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@layer base {
-  body {
-    @apply bg-surface-900 text-text-primary antialiased;
-  }
-}
+@import '@web-tools/ui/styles/base.css';
